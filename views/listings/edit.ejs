@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %>
+
+    <body>
+        <h1>Update Listing</h1>
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" enctype="multipart/form-data">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" value="<%= listing.title %>" id="title" class="form-control">
+            <br>
+            <label for="description" class="form-label">Description</label>
+            <input type="text" name="listing[description]" value="<%= listing.description %>" id="description"
+                class="form-control">
+
+            <br>
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]" value="<%= listing.price %>" id="price" class="form-control">
+            <br>
+            <p>Original Image:</p>
+            <img src="<%= originalUrl %>" alt="Current Image" style="max-width: 200px; max-height: 200px;">
+            <br>
+            <label for="image" class="form-label">New Upload Image</label>
+            <input type="file" name="listing[image]" id="image" class="form-control">
+            <br>
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" value="<%= listing.location %>" id="location"
+                class="form-control">
+
+            <br>
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" value="<%= listing.country %>" id="country" class="form-control">
+            <br>
+            <button class="btn btn-primary">Update Listing</button>
+        </form>
+    </body>
